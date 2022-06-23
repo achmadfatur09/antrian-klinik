@@ -57,6 +57,7 @@
                   <input type="text" class="rounded-pill px-4 py-2" id="nama" placeholder="Masukkan Nama" autocomplete="off" required name="nama">
                   <input type="text" class="rounded-pill px-4 py-2" id="username" placeholder="Masukkan Username" autocomplete="off" required name="username">
                   <input type="text" class="rounded-pill px-4 py-2" id="alumni" placeholder="Masukkan Alumni" autocomplete="off" required name="alumni">
+
                   <select name="pekerjaan" id="pekerjaan" required class="rounded-pill px-4 py-2">
                     <option value="">Spesialis Dokter</option>
                     <option value="Dokter Umum">Dokter Umum</option>
