@@ -56,12 +56,13 @@
               <thead>
                 <tr>
                   <th>No.</th>
+                  <th>No Rekam Medis</th>
                   <th>Nama Pasien</th>
                   <th>Waktu</th>
                   <th>Alamat</th>
                   <th>No HP</th>
                   <th>Dokter</th>
-                  <th>Riwayat Periksa</th>
+                  <th>Diagnosis</th>
                 </tr>
               </thead>
             </table>

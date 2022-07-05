@@ -124,6 +124,11 @@
               <thead>
                 <tr>
                   <th>Nomor Antrian</th>
+                  <th>No Str Dokter</th>
+                  <th>Nama Dokter</th>
+                  <th>Tekanan Darah</th>
+                  <th>Berat Badan</th>
+                  <th>Tinggi Badan</th>
                   <th>Status</th>
                   <th>Panggil</th>
                 </tr>
@@ -182,7 +187,7 @@
           },
           {
             "data": "status",
-            "visible": false
+            "visible": true
           },
           {
             "data": null,
@@ -197,12 +202,12 @@
                 var btn = "-";
               } 
               // jika data "status = 0"
-              else if (data["status"] === "0") {
+              else if (data["status"] === "Belum Dipanggil") {
                 // tampilkan button panggil
                 var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
               } 
               // jika data "status = 1"
-              else if (data["status"] === "1") {
+              else if (data["status"] === "Telah Dipanggil") {
                 // tampilkan button ulangi panggilan
                 var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
               };
@@ -211,7 +216,7 @@
           },
         ],
         "order": [
-          [0, "desc"]             // urutkan data berdasarkan "no_antrian" secara descending
+          [0, "asc"]             // urutkan data berdasarkan "no_antrian" secara descending
         ],
         "iDisplayLength": 10,     // tampilkan 10 data per halaman
       });
