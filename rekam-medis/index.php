@@ -35,8 +35,8 @@
       <div class="d-flex flex-column flex-md-row px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
         <!-- judul halaman -->
         <div class="d-flex align-items-center me-md-auto">
-          <i class="bi-mic-fill text-success me-3 fs-3"></i>
-          <h1 class="h5 pt-2">Panggilan Antrian</h1>
+          <i class="bi-card-list text-success me-3 fs-3"></i>
+          <h1 class="h5 pt-2">Rekam Medis</h1>
         </div>
         <!-- breadcrumbs -->
         <div class="ms-5 ms-md-0 pt-md-3 pb-md-0">
@@ -44,7 +44,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="../dashboard.php"><i class="bi-house-fill text-success"></i></a></li>
               <li class="breadcrumb-item" aria-current="page">Dashboard</li>
-              <li class="breadcrumb-item" aria-current="page">Panggilan Antrian</li>
+              <li class="breadcrumb-item" aria-current="page">Rekam Medis</li>
             </ol>
           </nav>
         </div>
@@ -65,6 +65,9 @@
                   <th>Diagnosis</th>
                 </tr>
               </thead>
+              <tbody>
+
+              </tbody>
             </table>
           </div>
         </div>
@@ -94,6 +97,43 @@
   <!-- Responsivevoice -->
   <!-- Get API Key -> https://responsivevoice.org/ -->
   <script src="https://code.responsivevoice.org/responsivevoice.js?key=jQZ2zcdq"></script>
+
+  <script src="../config/firebase.js" type="module"></script>
+  <script type="module">
+
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"
+    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+
+
+    get(ref(getDatabase(), 'rekammedis/')).then(res => {
+      let data = []
+      if (res.val()) {
+        res.forEach(v => {
+          data.push(v.val());
+        })
+      }
+
+      var no = 1;
+      for (let index = 0; index < data.length; index++) {
+        const element = data[index];
+        $("#tabel-antrian > tbody").append(`
+          <tr>
+            <td>${no++}</td>
+            <td>${element.noRekamMedis}</td>
+            <td>${element.fullName}</td>
+            <td>${element.date}</td>
+            <td>${element.alamat}</td>
+            <td>${element.noHp}</td>
+            <td>${element.dokter}</td>
+            <td>${element.konsultasi}</td>
+          </tr>
+        `);
+      }
+    }).catch(err => {
+      alert(err);
+    })
+
+  </script>
 
 </body>
 
