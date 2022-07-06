@@ -36,7 +36,12 @@
         <div>
           Selamat Datang di <strong>Aplikasi Antrian Klinik Drg. Sri Wulansari</strong>. Silahkan pilih halaman yang ingin ditampilkan.
         </div>
-        <button id="logout" class="btn btn-success rounded-pill px-4 py-2">Logout</button>
+        <div>
+          <button id="logout" class="btn btn-success rounded-pill px-4 py-2">Logout</button>
+          <a href="rekam-medis">
+            <button class="btn btn-success rounded-pill px-4 py-2">Check Rekam Medis</button>
+          </a>
+        </div>
       </div>
 
       <div class="row gx-5">
